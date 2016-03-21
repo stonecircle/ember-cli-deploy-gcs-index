@@ -31,7 +31,7 @@ $ ember install ember-cli-deploy-gcs-index
 - Place the following configuration into `config/deploy.js`
 
 ```javascript
-ENV[gcs-index'] = {
+ENV['gcs-index'] = {
   projectId: '<your-gcs-project-id>',
   keyFilename: 'path-to-your-JSON-key-file',
   bucket: '<your-bucket-name>'
@@ -181,18 +181,10 @@ The following properties are expected to be present on the deployment `context` 
 
 ## Using History-Location
 You can deploy your Ember application to GCS and still use the
-history-api for pretty URLs. This needs some configuration and the
-exact process depends on whether or not you are using X to
-serve cached content from your GCS bucket or if you are serving from
-an GCS bucket directly using GCS's Static Website Hosting option. Both
-options work, however, the Cloudfront method allows the process to
-occur without flashing a non-pretty URL in the browser before the
-application loads.
+history-api for pretty URLs. To achieve this set `index.html` as the
+[error page](https://cloud.google.com/storage/docs/website-configuration#step4).
 
-### With X
-TBD
-
-### Without X
+![Index and error page](https://s3.amazonaws.com/f.cl.ly/items/2w0s2J3l343O3n472e0Z/conf.png?v=969598a5)
 
 
 ## Running Tests
