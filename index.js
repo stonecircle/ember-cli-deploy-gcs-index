@@ -29,7 +29,7 @@ module.exports = {
         allowOverwrite: false
       },
 
-      requiredConfig: ['bucket', 'keyFilename', 'projectId'],
+      requiredConfig: ['bucket', 'projectId'],
 
       upload: function(/* context */) {
         var projectId      = this.readConfig('projectId');
